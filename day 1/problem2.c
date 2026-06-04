@@ -1,24 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    int n, sum = 0, remainder;
+    int N, sum = 0;
 
-    // Input the number
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    // Input the value of N
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
 
-    // Handle negative numbers
-    if (n < 0) {
-        n = -n;
-    }
+    // Using formula: sum = N * (N + 1) / 2
+    sum = N * (N + 1) / 2;
 
-    // Use for loop to calculate sum of digits
-    for (; n > 0; n = n / 10) {
-        remainder = n % 10;   // Get last digit
-        sum += remainder;     // Add to sum
-    }
-
-    printf("Sum of digits = %d\n", sum);
+    // Output the result
+    printf("The sum of the first %d natural numbers is: %d\n", N, sum);
 
     return 0;
 }
+
