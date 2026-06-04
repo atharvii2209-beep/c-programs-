@@ -2,17 +2,23 @@
 #include <stdio.h>
 
 int main() {
-    int N, sum = 0;
+    int n, i;
+    unsigned long long factorial = 1; // Use long long for large results
 
-    // Input the value of N
-    printf("Enter the value of N: ");
-    scanf("%d", &N);
+    // Input the number
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
 
-    // Using formula: sum = N * (N + 1) / 2
-    sum = N * (N + 1) / 2;
-
-    // Output the result
-    printf("The sum of the first %d natural numbers is: %d\n", N, sum);
+    // Check for negative input
+    if (n < 0) {
+        printf("Factorial of a negative number doesn't exist.\n");
+    } else {
+        // Loop to calculate factorial
+        for (i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        printf("Factorial of %d = %llu\n", n, factorial);
+    }
 
     return 0;
 }
