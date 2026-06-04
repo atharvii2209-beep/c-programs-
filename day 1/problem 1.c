@@ -1,8 +1,6 @@
-
 #include <stdio.h>
 
-int main() 
-{
+int main() {
     int N, sum = 0;
 
     // Input the value of N
@@ -17,3 +15,4 @@ int main()
 
     return 0;
 }
+
