@@ -1,29 +1,18 @@
+
 #include <stdio.h>
 
 int main() {
-    int n, reversed = 0, remainder;
+    int N, sum = 0;
 
-    // Input the number
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    // Input the value of N
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
 
-    int original = n;
-    if (n < 0) {
-        n = -n;  // make positive for processing
-    }
+    // Using formula: sum = N * (N + 1) / 2
+    sum = N * (N + 1) / 2;
 
-    // Reverse using for loop
-    for (; n > 0; n = n / 10) {
-        remainder = n % 10;                  // extract last digit
-        reversed = reversed * 10 + remainder; // build reversed number
-    }
-
-    // Restore sign if original was negative
-    if (original < 0) {
-        reversed = -reversed;
-    }
-
-    printf("Reversed number = %d\n", reversed);
+    // Output the result
+    printf("The sum of the first %d natural numbers is: %d\n", N, sum);
 
     return 0;
 }
