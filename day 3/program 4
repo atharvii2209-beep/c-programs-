@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        int gcd = findGCD(a, b);   // pehle GCD nikalenge
+        int lcm = (a * b) / gcd;   // formula: LCM * GCD = a * b
+
+        System.out.println("LCM of " + a + " and " + b + " is: " + lcm);
+
+        sc.close();
+    }
+
+    // helper function to find GCD using Euclidean Algorithm
+    public static int findGCD(int x, int y) {
+        while (y != 0) {
+            int temp = y;
+            y = x % y;
+            x = temp;
+        }
+        return x;
+    }
+}
